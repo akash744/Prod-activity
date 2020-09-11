@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Paper, Typography, CssBaseline, InputBase } from "@material-ui/core";
+import { Typography, InputBase } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 
@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
       width: '300px',
       backgroundColor: '#EBECF0',
-      marginLeft: theme.spacing(20),
+      marginLeft: theme.spacing(20),    
     },
     editableTitle: {
         flexGrow: 1,
@@ -40,6 +40,7 @@ export default function ListTitle() {
             {open? (
                 <div>
                 <InputBase 
+                    autoFocus
                     value = "TO-DO"
                     inputProps={{
                         className: classes.input,
