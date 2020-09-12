@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
       },  
 }));    
 
-export default function ListTitle() {
+export default function ListTitle(props: { title: any }) {
 
     const [open, setOpen] = useState(false);
     const classes = useStyles();
@@ -41,7 +41,7 @@ export default function ListTitle() {
                 <div>
                 <InputBase 
                     autoFocus
-                    value = "TO-DO"
+                    value = {props.title}
                     inputProps={{
                         className: classes.input,
                     }}
@@ -55,7 +55,7 @@ export default function ListTitle() {
                         onClick={() => setOpen(!open)}
                         className={classes.editableTitle}
                     >
-                        TO-DO
+                        {props.title}
                     </Typography>
                     <MoreHorizIcon />
             </div>
