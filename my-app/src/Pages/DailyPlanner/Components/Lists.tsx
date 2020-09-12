@@ -23,7 +23,7 @@ export default function Lists(props: { list: any }) {
                 <CssBaseline />
                 <ListTitle title={props.list.title} />
                 {props.list.cards.map((card: any) => (
-                    <Tiles key={card.id} />
+                    <Tiles key={card.id} card={card} />
                   ))}
                 <UserInput />
                 <div></div>

@@ -2,6 +2,7 @@ import React from "react";
 import { Paper, InputBase, Button, IconButton } from '@material-ui/core';
 import { makeStyles, fade } from '@material-ui/core/styles';
 import ClearIcon from '@material-ui/icons/Clear';
+import { useState } from "react";
 
 
 
@@ -35,18 +36,25 @@ type funcProps = {
 export default function UserInputBox({ setOpen }: funcProps) {
 
     const classes = useStyles();
+    const [cardTitle, setCardTitle] = useState('');
+
+    const handleOnChange = (e: any) => {
+      setCardTitle(e.target.value);
+    };
 
     return (
         <div>
             <div>
                 <Paper className={classes.card}>
                     <InputBase 
+                        onChange={handleOnChange}
                         multiline 
                         fullWidth
                         onBlur = {() => setOpen(false)}
                         inputProps={{
                             className: classes.input,
                         }}
+                        value={cardTitle}
                         placeholder="Enter contents for the Tile"
                     />
                 </Paper>

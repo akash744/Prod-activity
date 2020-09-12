@@ -10,14 +10,14 @@ const useStyles = makeStyles((theme) => ({
 }));    
 
 
-export default function Tiles() {
+export default function Tiles(props: {card: any} ) {
 
     const classes = useStyles();
 
     return (
         <div>
             <Paper className={classes.card}>
-                Finish HomeWork
+                {props.card.title}
             </Paper>   
         </div>
     );
